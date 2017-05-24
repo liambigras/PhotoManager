@@ -14,6 +14,7 @@ namespace PhotoManager
         private DB() { }
         public static Models.Users Users { get; set; }
         public static Models.Photos Photos { get; set; }
+        public static Models.Keywords Keywords { get; set; }
         public static DAL.DataBase DataBase { get; set; }
         public static void Initialize(string DB_Path, string SQL_Journal_Path = "")
         {
@@ -24,6 +25,7 @@ namespace PhotoManager
             DataBase.TrackSQL =  false;
             Users = new Models.Users(DataBase);
             Photos = new Models.Photos(DataBase);
+            Keywords = new Models.Keywords(DataBase);
         }
     }
     public class MvcApplication : System.Web.HttpApplication
